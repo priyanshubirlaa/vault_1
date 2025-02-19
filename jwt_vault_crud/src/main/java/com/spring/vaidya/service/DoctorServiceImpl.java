@@ -43,7 +43,7 @@ public class DoctorServiceImpl implements DoctorService {
         mailMessage.setTo(doctor.getUserEmail());
         mailMessage.setSubject("Complete Registration!");
         mailMessage.setText("To confirm your account, please click here : "
-                + "http://localhost:8080/doctor/confirm-account?token=" + confirmationToken.getConfirmationToken());
+                + "https://vault1-production-7c73.up.railway.app/doctor/confirm-account?token=" + confirmationToken.getConfirmationToken());
         emailService.sendEmail(mailMessage);
 
         return ResponseEntity.ok("Verify email by the link sent to your email address");
